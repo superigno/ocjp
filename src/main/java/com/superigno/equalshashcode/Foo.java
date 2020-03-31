@@ -25,5 +25,10 @@ public class Foo {
 	public int hashCode() {
 		return this.fooValue * 17;
 	}
+	
+	@Override
+	public String toString() {
+		return "Foo [fooValue=" + fooValue + "]";
+	}
 
 }

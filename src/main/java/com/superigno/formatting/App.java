@@ -1,5 +1,6 @@
 package com.superigno.formatting;
 
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -10,7 +11,7 @@ public class App {
 	
 	public static void main(String[] args) throws ParseException {
 		decimalFormatting();
-		dateFormatting();
+		//dateFormatting();
 	}	
 	
 	public static void decimalFormatting() {
@@ -19,8 +20,15 @@ public class App {
 			0 means to put a 0 in the position if no digit exists for it.
 		*/
 		
-		double d = 1234567.437;
-		DecimalFormat one = new DecimalFormat("###,###,###.###");
+		//double d = 1234567.437;
+		BigDecimal d = new BigDecimal("12345");
+		
+	    System.out.println("Big D!: "+d.toString());
+	    
+	    DecimalFormat one1 = new DecimalFormat("#,###.00");
+		System.out.println(one1.format(d));
+		
+		DecimalFormat one = new DecimalFormat("######,###.###");
 		System.out.println(one.format(d)); // 1,234,567.437
 		
 		DecimalFormat two = new DecimalFormat("000,000,000.00000");

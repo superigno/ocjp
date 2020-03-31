@@ -8,7 +8,8 @@ package com.superigno.switchstatement;
  *        - byte and Byte 
  *        - short and Short 
  *        - char and Character 
- *        - String - enum values 
+ *        - String 
+ *        - enum values 
  */
 
 public class App {
@@ -24,6 +25,8 @@ public class App {
 		switch (dayOfWeek) {
 		case 0_0:
 			System.out.println("Sunday");
+		case 1:
+			System.out.println("Monday");
 		default:
 			System.out.println("Weekday");
 		case 6:

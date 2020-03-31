@@ -12,6 +12,11 @@ public class App {
 		new App().usingLock();
 	}
 
+	
+	/**
+	 * You can’t mix and match the Lock framework and the synchronized keyword, as the Lock framework is an alternative to synchronization
+	 * */
+	
 	private void usingSync() {
 
 		int birdCount = 0;
@@ -33,7 +38,7 @@ public class App {
 		
 		/*Lock lock = new ReentrantLock(true);
 			When the boolean value is set to true , fairness is enabled and the longest waiting thread is guaranteed to obtain the lock the next time it is released. 
-			When the boolean value is set to false , the lock defaults to its normal behavior (random)
+			When the boolean value is set to false , the lock defaults to its normal behavior (random) - default behavior
 		*/
 		
 		try {
@@ -45,9 +50,11 @@ public class App {
 
 		if (lock.tryLock()) { // much better since it checks first if a lock is available then acquires it; advantage vs using synchronized block
 			try {
+				lock.lock();
 				System.out.print(" " + (++birdCount));
 			} finally {
-				lock.unlock(); // makes sure lock is released; good practice
+				lock.unlock();
+				lock.unlock(); // The unlock() method must be called the same number of times as the lock() method in order to release the lock.
 			}
 		} else {
 			System.out.println("Unable to acquire lock, doing something else");
