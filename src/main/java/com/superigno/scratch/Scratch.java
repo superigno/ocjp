@@ -8,9 +8,6 @@ public class Scratch {
 		String s = workStationId.substring( 0, 2 ) + workStationId.substring( 5 );
 		
 		System.out.println(s);
-		
-		InputStream 
-		
 	}
 
 }
