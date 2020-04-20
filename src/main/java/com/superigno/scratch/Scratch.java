@@ -1,20 +1,26 @@
 package com.superigno.scratch;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Scratch {
 
 	public static void main(String[] args) {
+		new Scratch().foo();
+	}
 
-		String [] bugs = { "cricket", "beetle", "ladybug" };
-		String [] alias = bugs;
-		System.out.println(bugs.equals(alias)); // true
-		System.out.println(bugs.toString()); // [Ljava.lang.String;@160bc7c0
-		
-		int [] i = {1,2,3};
-		System.out.println(i.toString());
-		Arrays.sort(bugs);
-		
+	public void foo() {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("1", "One");
+		bar(map);
+		System.out.println("Map: "+map.toString());
+	}
+	
+	public void bar(Map<String, String> map) {
+		Map<String, String> map2 = map;
+		map2.put("2", "Two");
+		map2 = new HashMap<String, String>();
+		map2.put("3", "Three");
 	}
 
 }

@@ -4,12 +4,21 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
 public class NewFormatter {
 
 	public static void main(String[] args) {
+		
+		System.out.println(LocalDate.now());
+		System.out.println(LocalTime.now());
+		System.out.println(LocalDateTime.now());
+		System.out.println(ZonedDateTime.now());		
+		
+		//-------------------
+		
 		LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
 		LocalTime time = LocalTime.of(11, 12, 34);
 		LocalDateTime dateTime = LocalDateTime.of(date, time);
