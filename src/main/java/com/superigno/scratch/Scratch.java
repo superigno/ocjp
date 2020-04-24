@@ -1,26 +1,17 @@
 package com.superigno.scratch;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 public class Scratch {
 
 	public static void main(String[] args) {
-		new Scratch().foo();
+		int[] random = { 6, -4, 12, 0, -10 };
+		int x = 12;
+		int y = Arrays.binarySearch(random, x);
+		System.out.println(y);
+		new Scratch().test();
+		
 	}
 
-	public void foo() {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("1", "One");
-		bar(map);
-		System.out.println("Map: "+map.toString());
-	}
-	
-	public void bar(Map<String, String> map) {
-		Map<String, String> map2 = map;
-		map2.put("2", "Two");
-		map2 = new HashMap<String, String>();
-		map2.put("3", "Three");
-	}
-
+	private void test() {};
 }

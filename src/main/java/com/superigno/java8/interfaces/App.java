@@ -11,7 +11,7 @@ public class App {
 		IFoo.testStatic();
 		//IFoo i = new Bar();
 		//i.testStatic(); //does not work
-		//new Bar().testStatic; //does not work\
+		//new Bar().testStatic; //does not work
 	}
 
 }

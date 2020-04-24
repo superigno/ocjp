@@ -1,23 +1,15 @@
-package com.superigno.date;
+package com.superigno.java8.date;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
 public class NewFormatter {
 
 	public static void main(String[] args) {
-		
-		System.out.println(LocalDate.now());
-		System.out.println(LocalTime.now());
-		System.out.println(LocalDateTime.now());
-		System.out.println(ZonedDateTime.now());		
-		
-		//-------------------
 		
 		LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
 		LocalTime time = LocalTime.of(11, 12, 34);
@@ -27,15 +19,15 @@ public class NewFormatter {
 		System.out.println(dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 
 		// --- start ---
-		DateTimeFormatter shortDateTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
-		System.out.println(shortDateTime.format(dateTime)); // 1/20/20
-		System.out.println(shortDateTime.format(date)); // 1/20/20
-		//System.out.println(shortDateTime.format(time)); // UnsupportedTemporalTypeException
+		DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+		System.out.println(formatter.format(dateTime)); // 1/20/20
+		System.out.println(formatter.format(date)); // 1/20/20
+		//System.out.println(shortDateTime.format(time)); // UnsupportedTemporalTypeException because we used ofLocalizedDate only
 
 		// or
 
-		System.out.println(dateTime.format(shortDateTime));
-		System.out.println(date.format(shortDateTime));
+		System.out.println(dateTime.format(formatter));
+		System.out.println(date.format(formatter));
 		//System.out.println(time.format(shortDateTime)); // UnsupportedTemporalTypeException
 
 		// --- end ---
@@ -52,9 +44,9 @@ public class NewFormatter {
 		
 		DateTimeFormatter f2 = DateTimeFormatter.ofPattern("MM dd yyyy");
 		LocalDate date2 = LocalDate.parse("01 02 2015", f2);
-		System.out.println(date2); // 2015-01-02
+		System.out.println(date2); // 2015-01-02 //using default format yyyy-MM-dd
 		
-		LocalTime time2 = LocalTime.parse("11:22"); //using default format
+		LocalTime time2 = LocalTime.parse("11:22"); //using default format hh:mm
 		System.out.println(time2); // 11:22
 		
 		
