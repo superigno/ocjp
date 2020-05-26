@@ -20,5 +20,9 @@ public class Reptile {
 		return true;
 	}
 	
+	public void testRuntime() throws IllegalArgumentException {
+		
+	}
+	
 	public Number test() {return 0;}
 }

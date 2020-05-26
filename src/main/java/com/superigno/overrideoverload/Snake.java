@@ -6,11 +6,11 @@ package com.superigno.overrideoverload;
  * 3. The method defined in the child class must be marked as static if it is marked as static in the parent class (method hiding). Likewise, the method must not be marked 
  *    as static in the child class if it is not marked as static in the parent class (method overriding).
  *    Method hiding ('redefining' in scjp 6 pdf) - statics -g1q
- * 4. May only be "hidden" and not overridden: (hidden meaning hndi makkita nung subclass -g1q)
+ * 4. May only be "hidden" and not overridden: (hidden meaning ang makikita eh ung value nung parent hndi sa subclass -g1q)
  * 	  - private instance methods
  *    - static methods
  *    - ALL variables (see int x example below) 
- *        
+ *  *Also check com.superigno.overridevshiding package      
  */
 
 public class Snake extends Reptile {
@@ -34,6 +34,11 @@ public class Snake extends Reptile {
 	// must be static as well; if parent is not static, must not be static as well
 	protected static boolean hasArms() {
 		return true;
+	}
+	
+	//walang pakialam kahit anong runtimeexception ilagay mo lol
+	public void testRuntime() throws RuntimeException {
+		
 	}
 
 	// will work but will not work if vice-versa (Number is parent of Integer) - parang exception

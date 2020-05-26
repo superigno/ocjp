@@ -26,7 +26,7 @@ public class HeavyAnimal {
 		//boolean b6 = anotherHippo instanceof Elephant; // DOES NOT COMPILE
 		
 		HeavyAnimal hippo3 = new Hippo();
-		boolean b7 = hippo3 instanceof Mother; //compiles; false
+		boolean b7 = hippo3 instanceof Mother; //compiles! false - take note that comparing instanceof with interfaces, it always compiles! - g1q
 		
 		System.out.println(b7);
 		/**

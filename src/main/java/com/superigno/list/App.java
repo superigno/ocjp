@@ -39,6 +39,8 @@ public class App {
 		for (String b : array) {
 			System.out.print(b + " "); // new test
 		}
-		list.remove(1); // throws UnsupportedOperation Exception
+		
+		list.remove(1); // throws UnsupportedOperation Exception - list is not <b>resizable</b> because it is backed by the underlying array!
+		list.add("hehe"); // will not work as well -g1q
 	}
 }
