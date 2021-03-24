@@ -14,11 +14,12 @@ public class Foo {
 	 * 
 	 * */
 	
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		byte b = 127;
 		short s = 32767;
 		int i = 2147483647;
-		long l = 9223372036854775807L;
+		long l = 9223372036854775807L; //need to add L since it is int by default
 		
 		Byte b2 = Byte.MAX_VALUE;
 		Short s2 = Short.MAX_VALUE;
@@ -29,6 +30,9 @@ public class Foo {
 		System.out.println(s==s2);
 		System.out.println(i==i2);
 		System.out.println(l==l2);	
+		
+		double d = 1.0;
+		float f = 1.0F; //need to add F since it is double by default
 		
 	}
 

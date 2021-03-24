@@ -1,5 +1,7 @@
 package com.superigno.switchstatement;
 
+import com.superigno.enums.Season;
+
 /**
  * @notes
  * 
@@ -22,7 +24,7 @@ public class App {
 
 	public static void foo(int dayOfWeek) {
 
-		switch (dayOfWeek) {
+		switch (dayOfWeek) { //Read above; only int and below, enum and String are allowed here!
 		case 0_0:
 			System.out.println("Sunday");
 		case 1:
@@ -35,6 +37,23 @@ public class App {
 
 		System.out.println("---------");
 	}
+	
+	public static void testEnum() {
+		switch (Season.SUMMER) {
+		case WINTER:
+			System.out.println("Get out the sled!");
+			break;
+		case SUMMER:
+			System.out.println("Time for the pool!");
+			break;
+	//	case Season.SPRING: //will not compile!!! enums types are implied
+	//		System.out.println("Spring");
+	//		break;	
+		default:
+			System.out.println("Is it summer yet?");
+		}
+	}
+	
 
 	/*
 	 * - You can use only literals, enum constants, or final constant variables of the same data type.

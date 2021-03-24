@@ -6,7 +6,10 @@ import java.util.List;
 
 public class App {
 
-	/* Take note of remove(Object object) vs remove (index) -g1q */
+	/* - Take note of remove(Object object) vs remove (index) 
+	 * - ArrayList is not allowed to contain primitives, Java will autobox parameters passed in to the proper wrapper type
+	 * 
+	 * */
 
 	public static void main2(String[] args) {
 
@@ -36,6 +39,8 @@ public class App {
 		for (String b : array) {
 			System.out.print(b + " "); // new test
 		}
-		list.remove(1); // throws UnsupportedOperation Exception
+		
+		list.remove(1); // throws UnsupportedOperation Exception - list is not <b>resizable</b> because it is backed by the underlying array!
+		list.add("hehe"); // will not work as well -g1q
 	}
 }
