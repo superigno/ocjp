@@ -1,4 +1,4 @@
-package com.superigno.directory;
+package com.superigno.readerwriter;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
