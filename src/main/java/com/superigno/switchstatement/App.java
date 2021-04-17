@@ -23,14 +23,17 @@ public class App {
 	}
 
 	public static void foo(int dayOfWeek) {
-
 		switch (dayOfWeek) { //Read above; only int and below, enum and String are allowed here!
+		
+		
+		default: //always last to be evaluated; does not matter where default is placed! -g1q
+			System.out.println("Weekday");
+			
 		case 0_0:
 			System.out.println("Sunday");
 		case 1:
 			System.out.println("Monday");
-		default:
-			System.out.println("Weekday");
+		
 		case 6:
 			System.out.println("Saturday");
 		}
